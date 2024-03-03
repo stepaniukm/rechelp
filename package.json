@@ -1,0 +1,23 @@
+{
+  "name": "rechelp",
+  "version": "0.0.0",
+  "description": "A monorepo for Rechelp app",
+  "private": true,
+  "packageManager": "pnpm@8.3.1",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "start": "turbo start",
+    "test": "turbo test"
+  },
+  "author": "Mateusz Stepaniuk <stepaniuk.m05@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10",
+    "pnpm": ">=3"
+  },
+  "devDependencies": {
+    "turbo": "^1.12.4",
+    "typescript": "^5.3.3"
+  }
+}
