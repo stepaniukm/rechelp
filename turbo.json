@@ -1,17 +1,19 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
-    "start": {
-      "dependsOn": ["^dev"],
-      "outputs": ["dist/**", ".nuxt/**"]
-    },
-    "dev": {
-      "dependsOn": ["^dev"],
-      "outputs": ["dist/**", ".nuxt/**"]
-    },
-    "build": {
-      "dependsOn": ["^dist"],
-      "outputs": ["dist", ".nuxt/**"]
-    }
-  }
+	"$schema": "https://turbo.build/schema.json",
+	"pipeline": {
+		"start": {
+			"dependsOn": ["^dev"],
+			"outputs": ["dist/**", ".nuxt/**"]
+		},
+		"dev": {
+			"dependsOn": ["^dev"],
+			"outputs": ["dist/**", ".nuxt/**"]
+		},
+		"build": {
+			"dependsOn": ["^dist"],
+			"outputs": ["dist", ".nuxt/**"]
+		},
+		"lint": {},
+		"format": {}
+	}
 }

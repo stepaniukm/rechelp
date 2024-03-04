@@ -1,8 +1,8 @@
-import { getApplication } from "./src/app.js";
+import { getApplication } from './src/app.js';
 
 const app = await getApplication();
-const port = Number(process.env["PORT"]) || 3000;
+const port = Number(process.env['PORT']) || 3000;
 
 app.listen({
-  port,
+	port,
 });

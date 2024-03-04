@@ -1,23 +1,40 @@
 {
-  "name": "rechelp",
-  "version": "0.0.0",
-  "description": "A monorepo for Rechelp app",
-  "private": true,
-  "packageManager": "pnpm@8.3.1",
-  "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "start": "turbo start",
-    "test": "turbo test"
-  },
-  "author": "Mateusz Stepaniuk <stepaniuk.m05@gmail.com>",
-  "license": "MIT",
-  "engines": {
-    "node": ">=10",
-    "pnpm": ">=3"
-  },
-  "devDependencies": {
-    "turbo": "^1.12.4",
-    "typescript": "^5.3.3"
-  }
+	"name": "rechelp",
+	"version": "0.0.0",
+	"description": "A monorepo for Rechelp app",
+	"private": true,
+	"packageManager": "pnpm@8.3.1",
+	"scripts": {
+		"build": "turbo build",
+		"dev": "turbo dev",
+		"start": "turbo start",
+		"test": "turbo test",
+		"prepare": "husky",
+		"lint": "eslint --fix --cache src/**/*.{ts,tsx}",
+		"format": "prettier --write --cache ."
+	},
+	"author": "Mateusz Stepaniuk <stepaniuk.m05@gmail.com>",
+	"license": "MIT",
+	"engines": {
+		"node": ">=10",
+		"pnpm": ">=3"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^19.0.3",
+		"@commitlint/config-conventional": "^19.0.3",
+		"@typescript-eslint/eslint-plugin": "^7.1.1",
+		"@typescript-eslint/parser": "^7.1.1",
+		"eslint": "^8.57.0",
+		"husky": "^9.0.11",
+		"lint-staged": "^15.2.2",
+		"prettier": "^3.2.5",
+		"turbo": "^1.12.4",
+		"typescript": "^5.3.3"
+	},
+	"lint-staged": {
+		"*.{js,ts}": [
+			"eslint --fix",
+			"prettier --write"
+		]
+	}
 }
