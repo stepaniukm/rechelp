@@ -3,15 +3,15 @@
 	"pipeline": {
 		"start": {
 			"dependsOn": ["^dev"],
-			"outputs": ["dist/**", ".nuxt/**"]
+			"outputs": ["dist/**", ".nuxt/**", ".output/**"]
 		},
 		"dev": {
 			"dependsOn": ["^dev"],
-			"outputs": ["dist/**", ".nuxt/**"]
+			"outputs": ["dist/**", ".nuxt/**", ".output/**"]
 		},
 		"build": {
 			"dependsOn": ["^dist"],
-			"outputs": ["dist", ".nuxt/**"]
+			"outputs": ["dist/**", ".nuxt/**", ".output/**"]
 		},
 		"lint": {},
 		"format": {}
