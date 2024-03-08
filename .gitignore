@@ -131,3 +131,7 @@ dist
 
 # turborepo
 .turbo
+
+# nuxt
+.nuxt
+.output

@@ -1,40 +1,40 @@
 {
-	"name": "rechelp",
-	"version": "0.0.0",
-	"description": "A monorepo for Rechelp app",
-	"private": true,
-	"packageManager": "pnpm@8.3.1",
-	"scripts": {
-		"build": "turbo build",
-		"dev": "turbo dev",
-		"start": "turbo start",
-		"test": "turbo test",
-		"prepare": "husky",
-		"lint": "eslint --fix --cache src/**/*.{ts,tsx}",
-		"format": "prettier --write --cache ."
-	},
-	"author": "Mateusz Stepaniuk <stepaniuk.m05@gmail.com>",
-	"license": "MIT",
-	"engines": {
-		"node": ">=10",
-		"pnpm": ">=3"
-	},
-	"devDependencies": {
-		"@commitlint/cli": "^19.0.3",
-		"@commitlint/config-conventional": "^19.0.3",
-		"@typescript-eslint/eslint-plugin": "^7.1.1",
-		"@typescript-eslint/parser": "^7.1.1",
-		"eslint": "^8.57.0",
-		"husky": "^9.0.11",
-		"lint-staged": "^15.2.2",
-		"prettier": "^3.2.5",
-		"turbo": "^1.12.4",
-		"typescript": "^5.3.3"
-	},
-	"lint-staged": {
-		"*.{js,ts}": [
-			"eslint --fix",
-			"prettier --write"
-		]
-	}
+  "name": "rechelp",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@8.15.4",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@event-driven-io/emmett": "^0.5.3",
+    "@event-driven-io/emmett-esdb": "^0.5.3",
+    "@eventstore/db-client": "^6.1.0",
+    "@nuxt/image": "^1.4.0",
+    "@nuxt/ui": "^2.14.2",
+    "nuxt-auth-utils": "^0.0.20",
+    "superjson": "^2.2.1",
+    "ts-pattern": "^5.0.8",
+    "vue": "^3.4.19",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.0.3",
+    "@nuxt/eslint-config": "^0.2.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "lint-staged": "^15.2.2",
+    "nuxt": "^3.10.3",
+    "prettier": "^3.2.5"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
 }
