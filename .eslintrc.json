@@ -1,5 +1,10 @@
 {
   "root": true,
-  "extends": ["@nuxt/eslint-config", "plugin:prettier/recommended"],
-  "plugins": ["eslint-plugin-prettier"]
+  "extends": [
+    "@nuxt/eslint-config",
+    "plugin:security-node/recommended",
+    "plugin:anti-trojan-source/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["eslint-plugin-prettier", "security-node", "anti-trojan-source"]
 }

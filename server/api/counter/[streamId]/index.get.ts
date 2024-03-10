@@ -3,6 +3,10 @@ import { evolve, getInitialState } from "~/app/counter";
 import { eventStore } from "~/app/event-store";
 
 export default eventHandler(async (event) => {
+  const { user } = await getUserSession(event);
+  if (!user) {
+    throw new Error("Unauthorized");
+  }
   try {
     const streamId = getRouterParam(event, "streamId");
 

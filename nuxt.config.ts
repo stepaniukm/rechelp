@@ -1,6 +1,15 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { isDevelopment } from "std-env";
+
 export default defineNuxtConfig({
-  modules: ["nuxt-auth-utils", "@nuxt/image", "@nuxt/ui"],
+  modules: [
+    "nuxt-auth-utils",
+    "@nuxt/image",
+    "@nuxt/ui",
+    "nuxt-security",
+    "nuxt-typed-router",
+    "nuxt-icon",
+    "@vueuse/nuxt",
+  ],
   devtools: { enabled: true },
   runtimeConfig: {
     oauth: {
@@ -8,6 +17,12 @@ export default defineNuxtConfig({
         clientId: process.env.NUXT_GITHUB_CLIENT_ID,
         clientSecret: process.env.NUXT_GITHUB_CLIENT_SECRET,
       },
+    },
+  },
+  security: {
+    rateLimiter: isDevelopment ? false : undefined,
+    headers: {
+      crossOriginEmbedderPolicy: isDevelopment ? "unsafe-none" : "require-corp",
     },
   },
 });
