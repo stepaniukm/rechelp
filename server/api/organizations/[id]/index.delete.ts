@@ -1,10 +1,10 @@
 import { eq } from "drizzle-orm";
-import { number, object, parseAsync } from "valibot";
+import { coerce, number, object, parseAsync } from "valibot";
 import { db } from "~/app/db/drizzle-client";
 import { organizations } from "~/app/db/schema";
 
 const paramsSchema = object({
-  id: number(),
+  id: coerce(number(), (input: unknown) => Number(input)),
 });
 
 export default defineEventHandler(async (event) => {
