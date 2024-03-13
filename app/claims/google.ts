@@ -1,4 +1,4 @@
-import { number, object, string, type Input } from "valibot";
+import { object, string, type Input } from "valibot";
 
 export const googleClaimsSchema = object({
   sub: string(),
