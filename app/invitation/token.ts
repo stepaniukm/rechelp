@@ -1,17 +1,24 @@
 import { randomBytes, createCipheriv, createDecipheriv } from "node:crypto";
+import {
+  concatUint8Arrays,
+  uint8ArrayToHex,
+  hexToUint8Array,
+  toUint8Array,
+  uint8ArrayToString,
+} from "uint8array-extras";
 
 const algorithm = "aes-256-ctr";
 const secretKey = process.env.NUXT_INVITE_TOKEN_SECRET!;
 
 export const encrypt = (text: string) => {
-  const iv = randomBytes(16);
+  const iv = toUint8Array(randomBytes(16));
   const cipher = createCipheriv(algorithm, secretKey, iv);
 
-  const encrypted = Buffer.concat([cipher.update(text), cipher.final()]);
+  const encrypted = concatUint8Arrays([cipher.update(text), cipher.final()]);
 
   return {
-    iv: iv.toString("hex"),
-    content: encrypted.toString("hex"),
+    iv: uint8ArrayToHex(iv),
+    content: uint8ArrayToHex(encrypted),
   };
 };
 
@@ -19,13 +26,13 @@ export const decrypt = (encrypted: ReturnType<typeof encrypt>) => {
   const decipher = createDecipheriv(
     algorithm,
     secretKey,
-    Buffer.from(encrypted.iv, "hex"),
+    hexToUint8Array(encrypted.iv),
   );
 
-  const decrypted = Buffer.concat([
-    decipher.update(Buffer.from(encrypted.content, "hex")),
+  const decrypted = concatUint8Arrays([
+    decipher.update(hexToUint8Array(encrypted.content)),
     decipher.final(),
   ]);
 
-  return decrypted.toString();
+  return uint8ArrayToString(decrypted);
 };
