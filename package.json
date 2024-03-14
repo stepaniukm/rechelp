@@ -38,7 +38,9 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.1.0",
     "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/prompt-cli": "^19.1.0",
     "@nuxt/eslint-config": "^0.2.0",
     "drizzle-kit": "^0.20.14",
     "eslint-config-prettier": "^9.1.0",
@@ -53,6 +55,9 @@
     "prettier": "^3.2.5"
   },
   "lint-staged": {
-    "*.{js,ts}": ["eslint --fix", "prettier --write"]
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
