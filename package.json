@@ -32,6 +32,7 @@
     "superjson": "^2.2.1",
     "ts-pattern": "^5.0.8",
     "ufo": "^1.4.0",
+    "uint8array-extras": "^1.1.0",
     "valibot": "^0.30.0",
     "vue": "^3.4.19",
     "vue-router": "^4.3.0"
