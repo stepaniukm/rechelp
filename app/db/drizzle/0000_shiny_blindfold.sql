@@ -1,3 +1,10 @@
+CREATE TABLE IF NOT EXISTS "invite_tokens" (
+	"id" serial PRIMARY KEY NOT NULL,
+	"token" text NOT NULL,
+	"iv" text NOT NULL,
+	"used" boolean DEFAULT false
+);
+--> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "organizations" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"name" varchar,

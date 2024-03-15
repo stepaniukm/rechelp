@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm";
 import { object, optional, parseAsync, string } from "valibot";
 import { googleEventHandler } from "~/app/auth/handlers/google";
-import { googleClaimsSchema } from "~/app/claims/google";
+import { googleClaimsSchema } from "~/app/auth/claims/google";
 import { db } from "~/app/db/drizzle-client";
 import { inviteTokens, users } from "~/app/db/schema";
 import { decrypt } from "~/app/invitation/token";

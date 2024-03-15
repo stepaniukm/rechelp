@@ -1,7 +1,7 @@
 import { db } from "~/app/db/drizzle-client";
 import { users } from "~/app/db/schema";
 import { parseAsync } from "valibot";
-import { githubClaimsSchema } from "~/app/claims/github";
+import { githubClaimsSchema } from "~/app/auth/claims/github";
 
 export default oauth.githubEventHandler({
   config: {

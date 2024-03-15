@@ -33,6 +33,18 @@ services:
       - type: volume
         source: eventstore-volume-logs
         target: /var/log/eventstore
+  # app:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: "rechelp-app"
+  #   depends_on:
+  #     - postgres
+  #     - eventstore.db
+  #   ports:
+  #     - "3000:3000"
+  #   env_file:
+  #     - .env.docker
 
 volumes:
   postgres-data:
