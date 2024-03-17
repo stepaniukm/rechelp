@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "nuxt-typed-router",
     "nuxt-icon",
     "@vueuse/nuxt",
+    "nuxt-monaco-editor",
   ],
   devtools: { enabled: true },
   runtimeConfig: {
@@ -24,5 +25,8 @@ export default defineNuxtConfig({
     headers: {
       crossOriginEmbedderPolicy: isDevelopment ? "unsafe-none" : "require-corp",
     },
+  },
+  monacoEditor: {
+    lang: "pl",
   },
 });
