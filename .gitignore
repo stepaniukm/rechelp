@@ -136,3 +136,7 @@ dist
 # nuxt
 .nuxt
 .output
+
+# ssl
+**/*.crt
+**/*.key

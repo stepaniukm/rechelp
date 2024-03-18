@@ -1,6 +1,15 @@
 import { isDevelopment } from "std-env";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 
 export default defineNuxtConfig({
+  devServer: {
+    host: "0.0.0.0",
+    https: {
+      cert: readFileSync(resolve(__dirname, "server.crt")).toString(),
+      key: readFileSync(resolve(__dirname, "server.key")).toString(),
+    },
+  },
   modules: [
     "nuxt-auth-utils",
     "@nuxt/image",
@@ -9,7 +18,6 @@ export default defineNuxtConfig({
     "nuxt-typed-router",
     "nuxt-icon",
     "@vueuse/nuxt",
-    "nuxt-monaco-editor",
   ],
   devtools: { enabled: true },
   runtimeConfig: {
@@ -25,8 +33,5 @@ export default defineNuxtConfig({
     headers: {
       crossOriginEmbedderPolicy: isDevelopment ? "unsafe-none" : "require-corp",
     },
-  },
-  monacoEditor: {
-    lang: "pl",
   },
 });
