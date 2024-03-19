@@ -2,10 +2,12 @@ import { relations } from "drizzle-orm";
 import {
   boolean,
   integer,
+  pgEnum,
   pgTable,
   serial,
   text,
   varchar,
+  smallint,
 } from "drizzle-orm/pg-core";
 
 export const organizations = pgTable("organizations", {
@@ -18,7 +20,7 @@ export type Organization = typeof organizations.$inferSelect;
 
 export const users = pgTable("users", {
   id: text("id").primaryKey(),
-  firstName: text("first_name"),
+  firstName: text("first_name").notNull(),
   organizationId: integer("organization_id"),
 });
 
@@ -48,3 +50,44 @@ export const inviteTokens = pgTable("invite_tokens", {
   iv: text("iv").notNull(),
   used: boolean("used").default(false),
 });
+
+export const recruitmentProcess = pgTable("recruitment_process", {
+  id: serial("id").primaryKey(),
+  role: text("role").notNull(),
+  recruiterId: text("recruiter_id").notNull(),
+});
+
+export const recruitmentProcessRelations = relations(
+  recruitmentProcess,
+  ({ one, many }) => ({
+    recruiter: one(users, {
+      fields: [recruitmentProcess.recruiterId],
+      references: [users.id],
+    }),
+    steps: many(recruitmentStep),
+  }),
+);
+
+export const recruitmentStepType = pgEnum("recruitment_step_type", [
+  "call",
+  "home_task",
+  "feedback",
+]);
+
+export const recruitmentStep = pgTable("recruitment_step", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  processId: integer("process_id").notNull(),
+  type: recruitmentStepType("type").notNull(),
+  order: smallint("order").notNull(),
+});
+
+export const recruitmentStepRelations = relations(
+  recruitmentStep,
+  ({ one }) => ({
+    recruitmentProcess: one(recruitmentProcess, {
+      fields: [recruitmentStep.processId],
+      references: [recruitmentProcess.id],
+    }),
+  }),
+);
