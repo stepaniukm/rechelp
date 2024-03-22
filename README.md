@@ -28,5 +28,3 @@ It's a recruitment helper, supporting on every step of the recruitment process. 
   docker compose up -d
   pnpm run dev
 ```
-
-## Test
