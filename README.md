@@ -10,8 +10,8 @@ It's a recruitment helper, supporting on every step of the recruitment process. 
 
 ## Planned features
 
-- Notes on every step of the process and associate it with feelings of the recruiter.
-- Automated feedback for a recruiter via AI, based on recruitment notes, in form of a brief summary
+- notes on every step of the process and associate it with feelings of the recruiter.
+- automated feedback for a recruiter via AI, based on recruitment notes, in form of a brief summary
 - comparison of candidates
 - private decks of questions
 - marketplace of community decks
