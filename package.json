@@ -15,11 +15,11 @@
     "studio": "drizzle-kit studio --config=./app/db/drizzle.config.ts"
   },
   "dependencies": {
-    "@event-driven-io/emmett": "^0.5.5",
-    "@event-driven-io/emmett-esdb": "^0.5.5",
+    "@event-driven-io/emmett": "^0.6.0",
+    "@event-driven-io/emmett-esdb": "^0.6.0",
     "@eventstore/db-client": "^6.1.0",
     "@nuxt/image": "^1.4.0",
-    "@nuxt/ui": "^2.14.2",
+    "@nuxt/ui": "^2.15.0",
     "@vueuse/nuxt": "^10.9.0",
     "defu": "^6.1.4",
     "drizzle-orm": "^0.30.4",
