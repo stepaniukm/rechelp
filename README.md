@@ -15,7 +15,8 @@ It's a recruitment helper, supporting on every step of the recruitment process. 
 - comparison of candidates
 - private decks of questions
 - marketplace of community decks
-  
+
+
 ## Prerequisites
 
 - docker
